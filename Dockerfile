@@ -2,7 +2,7 @@ FROM centos:7 as build-dep
 RUN mkdir /prereq
 WORKDIR /prereq
 RUN yum groups mark convert && yum -y --setopt=group_package_types=mandatory,default,optional groupinstall "Development Tools"
-RUN yum install -y libvirt-python gtk3-devel zlib gtksourceview3-devel tree libxslt-devel
+RUN yum install -y libvirt-python gtk3-devel zlib gtksourceview3-devel tree libxslt-devel libffi-devel
 
 FROM build-dep as dep-dl
 RUN curl https://ftp.gnu.org/pub/gnu/gettext/gettext-0.21.tar.gz -o gettext.tar.gz && tar -xf gettext*.tar.gz
@@ -24,4 +24,4 @@ RUN ./configure && make && make install
 
 FROM dep-python39 as dep-pygobject
 WORKDIR /prereq/pygobject-3.38.0
-RUN python setup.py install
+RUN python3 setup.py install
