@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.36.0 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkWindow" id="vmm-storage-browse">
+    <property name="can_focus">False</property>
+    <property name="border_width">6</property>
+    <property name="title">title</property>
+    <property name="default_width">750</property>
+    <property name="default_height">500</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <signal name="delete-event" handler="on_vmm_storage_browse_delete_event" swapped="no"/>
+    <child>
+      <object class="GtkAlignment" id="storage-align">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+    <child internal-child="accessible">
+      <object class="AtkObject" id="vmm-storage-browse-atkobject">
+        <property name="AtkObject::accessible-name">vmm-storage-browser</property>
+      </object>
+    </child>
+  </object>
+</interface>

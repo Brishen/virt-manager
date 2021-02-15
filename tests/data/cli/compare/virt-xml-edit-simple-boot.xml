@@ -1,0 +1,14 @@
+   </numatune>
+   <os>
+     <type arch="i686">hvm</type>
+-    <loader type="rom">/usr/lib/xen/boot/hvmloader</loader>
++    <loader type="rom" readonly="yes" secure="no">foo.bar</loader>
++    <nvram>/test/nvram.img</nvram>
++    <bios useserial="yes"/>
++    <init>/bin/bash</init>
+   </os>
+   <idmap>
+     <uid start="0" target="1000" count="10"/>
+
+Domain 'test-for-virtxml' defined successfully.
+Changes will take effect after the domain is fully powered off.
