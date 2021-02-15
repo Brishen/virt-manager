@@ -2,7 +2,7 @@ FROM centos:7 as build-dep
 RUN mkdir /prereq
 WORKDIR /prereq
 RUN yum groups mark convert && yum -y --setopt=group_package_types=mandatory,default,optional groupinstall "Development Tools"
-RUN yum install -y libvirt-python gtk3-devel zlib gtksourceview3-devel tree
+RUN yum install -y libvirt-python gtk3-devel zlib gtksourceview3-devel tree libxslt-devel
 
 FROM build-dep as dep-dl
 RUN curl https://ftp.gnu.org/pub/gnu/gettext/gettext-0.21.tar.gz -o gettext.tar.gz && tar -xf gettext*.tar.gz
